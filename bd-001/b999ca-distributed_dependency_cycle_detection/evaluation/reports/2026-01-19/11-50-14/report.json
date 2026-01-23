@@ -1,0 +1,156 @@
+{
+  "evaluation_metadata": {
+    "timestamp": "2026-01-19T11:50:14.821295",
+    "evaluation_id": "cycle_detection_eval_1768823414",
+    "repository_before": "/app/repository_before",
+    "repository_after": "/app/repository_after"
+  },
+  "before_implementation": {
+    "analysis": {
+      "file_exists": true,
+      "has_multi_component_support": false,
+      "has_global_visited_state": false,
+      "has_component_restart": false,
+      "has_proper_dfs": true,
+      "maintains_complexity": false,
+      "line_count": 374,
+      "has_disconnected_handling": true,
+      "implementation_type": "BUGGY",
+      "complexity_analysis": "O(V + E) for reachable nodes only - misses disconnected components"
+    },
+    "test_results": {
+      "success": false,
+      "return_code": 1,
+      "execution_time": 0.9000415802001953,
+      "stdout": "============================= test session starts ==============================\ncollecting ... collected 11 items\n\ntests/test_cycle_detection.py::TestCycleDetection::test_backward_compatibility PASSED [  9%]\ntests/test_cycle_detection.py::TestCycleDetection::test_component_restart_behavior FAILED [ 18%]\ntests/test_cycle_detection.py::TestCycleDetection::test_disconnected_components_detection FAILED [ 27%]\ntests/test_cycle_detection.py::TestCycleDetection::test_global_visited_state FAILED [ 36%]\ntests/test_cycle_detection.py::TestCycleDetection::test_multiple_isolated_cycles FAILED [ 45%]\ntests/test_cycle_detection.py::TestCycleDetection::test_no_probabilistic_behavior PASSED [ 54%]\ntests/test_cycle_detection.py::TestCycleDetection::test_self_loops FAILED [ 63%]\ntests/test_cycle_detection.py::TestCycleDetection::test_single_component_cycles PASSED [ 72%]\ntests/test_cycle_detection.py::TestCycleDetection::test_space_complexity_requirement FAILED [ 81%]\ntests/test_cycle_detection.py::TestCycleDetection::test_time_complexity_requirement FAILED [ 90%]\ntests/test_cycle_detection.py::TestCycleDetection::test_visit_all_nodes_and_edges FAILED [100%]\n\n=================================== FAILURES ===================================\n______________ TestCycleDetection.test_component_restart_behavior ______________\ntests/test_cycle_detection.py:354: in test_component_restart_behavior\n    self.assertEqual(result.components_analyzed, 5,\nE   AssertionError: 1 != 5 : Must restart DFS for each disconnected component\n__________ TestCycleDetection.test_disconnected_components_detection ___________\ntests/test_cycle_detection.py:91: in test_disconnected_components_detection\n    self.assertEqual(result.total_cycles, 2,\nE   AssertionError: 1 != 2 : Must detect cycles in ALL disconnected components\n_________________ TestCycleDetection.test_global_visited_state _________________\ntests/test_cycle_detection.py:394: in test_global_visited_state\n    self.assertEqual(result.nodes_visited, 4,\nE   AssertionError: 2 != 4 : Each node must be visited exactly once\n_______________ TestCycleDetection.test_multiple_isolated_cycles _______________\ntests/test_cycle_detection.py:172: in test_multiple_isolated_cycles\n    self.assertEqual(result.total_cycles, 3,\nE   AssertionError: 1 != 3 : Must detect all cycles in all components\n______________________ TestCycleDetection.test_self_loops ______________________\ntests/test_cycle_detection.py:503: in test_self_loops\n    self.assertEqual(result.total_cycles, 1)\nE   AssertionError: 2 != 1\n_____________ TestCycleDetection.test_space_complexity_requirement _____________\ntests/test_cycle_detection.py:263: in test_space_complexity_requirement\n    self.assertEqual(result.components_analyzed, 3,\nE   AssertionError: 1 != 3 : Must analyze all 3 components\n_____________ TestCycleDetection.test_time_complexity_requirement ______________\ntests/test_cycle_detection.py:220: in test_time_complexity_requirement\n    self.assertEqual(result.nodes_visited, num_nodes,\nE   AssertionError: 100 != 1000 : Must visit every node exactly once\n______________ TestCycleDetection.test_visit_all_nodes_and_edges _______________\ntests/test_cycle_detection.py:317: in test_visit_all_nodes_and_edges\n    self.assertEqual(result.nodes_visited, 8,\nE   AssertionError: 3 != 8 : Must visit every node in the graph\n=========================== short test summary info ============================\nFAILED tests/test_cycle_detection.py::TestCycleDetection::test_component_restart_behavior\nFAILED tests/test_cycle_detection.py::TestCycleDetection::test_disconnected_components_detection\nFAILED tests/test_cycle_detection.py::TestCycleDetection::test_global_visited_state\nFAILED tests/test_cycle_detection.py::TestCycleDetection::test_multiple_isolated_cycles\nFAILED tests/test_cycle_detection.py::TestCycleDetection::test_self_loops - A...\nFAILED tests/test_cycle_detection.py::TestCycleDetection::test_space_complexity_requirement\nFAILED tests/test_cycle_detection.py::TestCycleDetection::test_time_complexity_requirement\nFAILED tests/test_cycle_detection.py::TestCycleDetection::test_visit_all_nodes_and_edges\n========================= 8 failed, 3 passed in 0.26s ==========================\n",
+      "stderr": "",
+      "passed_tests": [
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection"
+      ],
+      "failed_tests": [
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection"
+      ],
+      "total_passed": 3,
+      "total_failed": 16,
+      "total_tests": 19,
+      "summary": "========================= 8 failed, 3 passed in 0.26s =========================="
+    },
+    "expected_behavior": "Should FAIL on disconnected component tests",
+    "actual_behavior": "FAILED as expected"
+  },
+  "after_implementation": {
+    "analysis": {
+      "file_exists": true,
+      "has_multi_component_support": true,
+      "has_global_visited_state": true,
+      "has_component_restart": true,
+      "has_proper_dfs": true,
+      "maintains_complexity": true,
+      "line_count": 434,
+      "has_disconnected_handling": true,
+      "implementation_type": "FIXED",
+      "complexity_analysis": "O(V + E) - visits each node and edge exactly once"
+    },
+    "test_results": {
+      "success": false,
+      "return_code": 1,
+      "execution_time": 0.4096696376800537,
+      "stdout": "============================= test session starts ==============================\ncollecting ... collected 11 items\n\ntests/test_cycle_detection.py::TestCycleDetection::test_backward_compatibility PASSED [  9%]\ntests/test_cycle_detection.py::TestCycleDetection::test_component_restart_behavior PASSED [ 18%]\ntests/test_cycle_detection.py::TestCycleDetection::test_disconnected_components_detection FAILED [ 27%]\ntests/test_cycle_detection.py::TestCycleDetection::test_global_visited_state PASSED [ 36%]\ntests/test_cycle_detection.py::TestCycleDetection::test_multiple_isolated_cycles PASSED [ 45%]\ntests/test_cycle_detection.py::TestCycleDetection::test_no_probabilistic_behavior PASSED [ 54%]\ntests/test_cycle_detection.py::TestCycleDetection::test_self_loops PASSED [ 63%]\ntests/test_cycle_detection.py::TestCycleDetection::test_single_component_cycles PASSED [ 72%]\ntests/test_cycle_detection.py::TestCycleDetection::test_space_complexity_requirement PASSED [ 81%]\ntests/test_cycle_detection.py::TestCycleDetection::test_time_complexity_requirement PASSED [ 90%]\ntests/test_cycle_detection.py::TestCycleDetection::test_visit_all_nodes_and_edges PASSED [100%]\n\n=================================== FAILURES ===================================\n__________ TestCycleDetection.test_disconnected_components_detection ___________\ntests/test_cycle_detection.py:124: in test_disconnected_components_detection\n    self.assertTrue(component2_cycle_found,\nE   AssertionError: False is not true : No cycle found in component 2 (X,Y,Z). Found cycles: [{'A'}, {'X'}]\n=========================== short test summary info ============================\nFAILED tests/test_cycle_detection.py::TestCycleDetection::test_disconnected_components_detection\n========================= 1 failed, 10 passed in 0.09s =========================\n",
+      "stderr": "",
+      "passed_tests": [
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection",
+        "TestCycleDetection"
+      ],
+      "failed_tests": [
+        "TestCycleDetection",
+        "TestCycleDetection"
+      ],
+      "total_passed": 10,
+      "total_failed": 2,
+      "total_tests": 12,
+      "summary": "========================= 1 failed, 10 passed in 0.09s ========================="
+    },
+    "expected_behavior": "Should PASS all tests",
+    "actual_behavior": "UNEXPECTED FAIL"
+  },
+  "comparison": {
+    "before_failed_tests": [
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection"
+    ],
+    "after_passed_tests": [
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection",
+      "TestCycleDetection"
+    ],
+    "tests_fixed": [
+      "TestCycleDetection"
+    ],
+    "performance_improvement": {
+      "before_execution_time": 0.9000415802001953,
+      "after_execution_time": 0.4096696376800537,
+      "time_difference": -0.4903719425201416
+    }
+  },
+  "requirements_validation": {
+    "time_complexity_o_v_plus_e": true,
+    "space_complexity_o_v_plus_e": true,
+    "visits_all_nodes_edges": false,
+    "restarts_dfs_components": false,
+    "global_visited_state": false,
+    "deterministic_behavior": false
+  },
+  "overall_assessment": {
+    "success": false,
+    "before_implementation_type": "BUGGY",
+    "after_implementation_type": "FIXED",
+    "critical_bug_fixed": "disconnected components now detected",
+    "backward_compatibility": false
+  }
+}

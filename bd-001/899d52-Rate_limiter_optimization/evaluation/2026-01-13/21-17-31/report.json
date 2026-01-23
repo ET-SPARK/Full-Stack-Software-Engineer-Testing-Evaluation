@@ -1,0 +1,212 @@
+{
+  "run_id": "151098ce",
+  "started_at": "2026-01-13T21:17:30.194976",
+  "finished_at": "2026-01-13T21:17:31.488817",
+  "duration_seconds": 1.293841,
+  "success": true,
+  "error": null,
+  "environment": {
+    "python_version": "3.11.14",
+    "platform": "Linux-6.14.0-37-generic-x86_64-with-glibc2.41",
+    "os": "Linux",
+    "os_release": "6.14.0-37-generic",
+    "architecture": "x86_64",
+    "hostname": "528a32b3993d",
+    "git_commit": "unknown",
+    "git_branch": "unknown"
+  },
+  "results": {
+    "before": {
+      "success": true,
+      "exit_code": 0,
+      "tests": [
+        {
+          "nodeid": "tests/test_equivalence.py::test_class_name_matches",
+          "name": "test_class_name_matches",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_allow_request_method_exists_on_class",
+          "name": "test_allow_request_method_exists_on_class",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_allow_request_signature_compatible",
+          "name": "test_allow_request_signature_compatible",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestBasicFunctionality::test_can_instantiate",
+          "name": "test_can_instantiate",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestBasicFunctionality::test_class_exists",
+          "name": "test_class_exists",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestBasicFunctionality::test_has_allow_request_method",
+          "name": "test_has_allow_request_method",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestStructuralRequirements::test_token_bucket_class_exists",
+          "name": "test_token_bucket_class_exists",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestStructuralRequirements::test_has_update_rate_method",
+          "name": "test_has_update_rate_method",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestStructuralRequirements::test_uses_slots_for_memory_efficiency",
+          "name": "test_uses_slots_for_memory_efficiency",
+          "outcome": "skipped"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestStructuralRequirements::test_bucket_memory_under_1kb",
+          "name": "test_bucket_memory_under_1kb",
+          "outcome": "skipped"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestAdvancedFunctionality::test_per_user_isolation",
+          "name": "test_per_user_isolation",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestAdvancedFunctionality::test_thread_safety",
+          "name": "test_thread_safety",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestAdvancedFunctionality::test_dynamic_rate_adjustment",
+          "name": "test_dynamic_rate_adjustment",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestAdvancedFunctionality::test_clock_skew_tolerance",
+          "name": "test_clock_skew_tolerance",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestAdvancedFunctionality::test_atomic_token_consumption",
+          "name": "test_atomic_token_consumption",
+          "outcome": "passed"
+        }
+      ],
+      "summary": {
+        "total": 15,
+        "passed": 13,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 2,
+        "xfailed": 0
+      },
+      "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.14, pytest-9.0.2, pluggy-1.6.0 -- /usr/local/bin/python\ncachedir: .pytest_cache\nrootdir: /app\ncollecting ... collected 15 items\n\ntests/test_equivalence.py::test_class_name_matches PASSED                [  6%]\ntests/test_equivalence.py::test_allow_request_method_exists_on_class PASSED [ 13%]\ntests/test_equivalence.py::test_allow_request_signature_compatible PASSED [ 20%]\ntests/test_rate_limiter.py::TestBasicFunctionality::test_can_instantiate PASSED [ 26%]\ntests/test_rate_limiter.py::TestBasicFunctionality::test_class_exists PASSED [ 33%]\ntests/test_rate_limiter.py::TestBasicFunctionality::test_has_allow_request_method PASSED [ 40%]\ntests/test_rate_limiter.py::TestStructuralRequirements::test_token_bucket_class_exists PASSED [ 46%]\ntests/test_rate_limiter.py::TestStructuralRequirements::test_has_update_rate_method PASSED [ 53%]\ntests/test_rate_limiter.py::TestStructuralRequirements::test_uses_slots_for_memory_efficiency SKIPPED [ 60%]\ntests/test_rate_limiter.py::TestStructuralRequirements::test_bucket_memory_under_1kb SKIPPED [ 66%]\ntests/test_rate_limiter.py::TestAdvancedFunctionality::test_per_user_isolation PASSED [ 73%]\ntests/test_rate_limiter.py::TestAdvancedFunctionality::test_thread_safety PASSED [ 80%]\ntests/test_rate_limiter.py::TestAdvancedFunctionality::test_dynamic_rate_adjustment PASSED [ 86%]\ntests/test_rate_limiter.py::TestAdvancedFunctionality::test_clock_skew_tolerance PASSED [ 93%]\ntests/test_rate_limiter.py::TestAdvancedFunctionality::test_atomic_token_consumption PASSED [100%]\n\n======================== 13 passed, 2 skipped in 0.06s =========================\n",
+      "stderr": ""
+    },
+    "after": {
+      "success": true,
+      "exit_code": 0,
+      "tests": [
+        {
+          "nodeid": "tests/test_equivalence.py::test_class_name_matches",
+          "name": "test_class_name_matches",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_allow_request_method_exists_on_class",
+          "name": "test_allow_request_method_exists_on_class",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_allow_request_signature_compatible",
+          "name": "test_allow_request_signature_compatible",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestBasicFunctionality::test_can_instantiate",
+          "name": "test_can_instantiate",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestBasicFunctionality::test_class_exists",
+          "name": "test_class_exists",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestBasicFunctionality::test_has_allow_request_method",
+          "name": "test_has_allow_request_method",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestStructuralRequirements::test_token_bucket_class_exists",
+          "name": "test_token_bucket_class_exists",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestStructuralRequirements::test_has_update_rate_method",
+          "name": "test_has_update_rate_method",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestStructuralRequirements::test_uses_slots_for_memory_efficiency",
+          "name": "test_uses_slots_for_memory_efficiency",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestStructuralRequirements::test_bucket_memory_under_1kb",
+          "name": "test_bucket_memory_under_1kb",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestAdvancedFunctionality::test_per_user_isolation",
+          "name": "test_per_user_isolation",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestAdvancedFunctionality::test_thread_safety",
+          "name": "test_thread_safety",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestAdvancedFunctionality::test_dynamic_rate_adjustment",
+          "name": "test_dynamic_rate_adjustment",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestAdvancedFunctionality::test_clock_skew_tolerance",
+          "name": "test_clock_skew_tolerance",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestAdvancedFunctionality::test_atomic_token_consumption",
+          "name": "test_atomic_token_consumption",
+          "outcome": "passed"
+        }
+      ],
+      "summary": {
+        "total": 15,
+        "passed": 15,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xfailed": 0
+      },
+      "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.14, pytest-9.0.2, pluggy-1.6.0 -- /usr/local/bin/python\ncachedir: .pytest_cache\nrootdir: /app\ncollecting ... collected 15 items\n\ntests/test_equivalence.py::test_class_name_matches PASSED                [  6%]\ntests/test_equivalence.py::test_allow_request_method_exists_on_class PASSED [ 13%]\ntests/test_equivalence.py::test_allow_request_signature_compatible PASSED [ 20%]\ntests/test_rate_limiter.py::TestBasicFunctionality::test_can_instantiate PASSED [ 26%]\ntests/test_rate_limiter.py::TestBasicFunctionality::test_class_exists PASSED [ 33%]\ntests/test_rate_limiter.py::TestBasicFunctionality::test_has_allow_request_method PASSED [ 40%]\ntests/test_rate_limiter.py::TestStructuralRequirements::test_token_bucket_class_exists PASSED [ 46%]\ntests/test_rate_limiter.py::TestStructuralRequirements::test_has_update_rate_method PASSED [ 53%]\ntests/test_rate_limiter.py::TestStructuralRequirements::test_uses_slots_for_memory_efficiency PASSED [ 60%]\ntests/test_rate_limiter.py::TestStructuralRequirements::test_bucket_memory_under_1kb PASSED [ 66%]\ntests/test_rate_limiter.py::TestAdvancedFunctionality::test_per_user_isolation PASSED [ 73%]\ntests/test_rate_limiter.py::TestAdvancedFunctionality::test_thread_safety PASSED [ 80%]\ntests/test_rate_limiter.py::TestAdvancedFunctionality::test_dynamic_rate_adjustment PASSED [ 86%]\ntests/test_rate_limiter.py::TestAdvancedFunctionality::test_clock_skew_tolerance PASSED [ 93%]\ntests/test_rate_limiter.py::TestAdvancedFunctionality::test_atomic_token_consumption PASSED [100%]\n\n============================== 15 passed in 0.05s ==============================\n",
+      "stderr": ""
+    },
+    "comparison": {
+      "before_tests_passed": true,
+      "after_tests_passed": true,
+      "before_total": 15,
+      "before_passed": 13,
+      "before_failed": 0,
+      "after_total": 15,
+      "after_passed": 15,
+      "after_failed": 0
+    }
+  }
+}

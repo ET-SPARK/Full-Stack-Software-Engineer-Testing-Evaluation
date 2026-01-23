@@ -1,0 +1,170 @@
+{
+  "run_id": "deedfe97",
+  "started_at": "2026-01-16T13:35:45.796910",
+  "finished_at": "2026-01-16T13:35:47.078909",
+  "duration_seconds": 1.282,
+  "success": true,
+  "error": null,
+  "environment": {
+    "python_version": "3.11.14",
+    "platform": "Linux-6.14.0-37-generic-x86_64-with-glibc2.41",
+    "os": "Linux",
+    "os_release": "6.14.0-37-generic",
+    "architecture": "x86_64",
+    "hostname": "10e8ad986ef2",
+    "git_commit": "unknown",
+    "git_branch": "unknown"
+  },
+  "results": {
+    "before": {
+      "success": false,
+      "exit_code": 1,
+      "tests": [
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_exists",
+          "name": "test_generator_exists",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_is_async",
+          "name": "test_generator_is_async",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_yields_correct_count",
+          "name": "test_generator_yields_correct_count",
+          "outcome": "failed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_yields_floats",
+          "name": "test_generator_yields_floats",
+          "outcome": "failed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_values_in_range",
+          "name": "test_generator_values_in_range",
+          "outcome": "failed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_respects_delay",
+          "name": "test_generator_respects_delay",
+          "outcome": "failed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_uses_random_function",
+          "name": "test_generator_uses_random_function",
+          "outcome": "failed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_custom_count",
+          "name": "test_generator_custom_count",
+          "outcome": "failed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_custom_delay",
+          "name": "test_generator_custom_delay",
+          "outcome": "failed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_custom_range",
+          "name": "test_generator_custom_range",
+          "outcome": "failed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_works_with_asyncio_loop",
+          "name": "test_generator_works_with_asyncio_loop",
+          "outcome": "failed"
+        }
+      ],
+      "summary": {
+        "total": 11,
+        "passed": 2,
+        "failed": 9,
+        "errors": 0,
+        "skipped": 0
+      },
+      "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.14, pytest-7.4.3, pluggy-1.6.0 -- /usr/local/bin/python3.11\ncachedir: .pytest_cache\nrootdir: /app\nplugins: asyncio-0.21.1\nasyncio: mode=Mode.STRICT\ncollecting ... collected 11 items\n\ntests/test_async_generator.py::test_generator_exists PASSED              [  9%]\ntests/test_async_generator.py::test_generator_is_async PASSED            [ 18%]\ntests/test_async_generator.py::test_generator_yields_correct_count FAILED [ 27%]\ntests/test_async_generator.py::test_generator_yields_floats FAILED       [ 36%]\ntests/test_async_generator.py::test_generator_values_in_range FAILED     [ 45%]\ntests/test_async_generator.py::test_generator_respects_delay FAILED      [ 54%]\ntests/test_async_generator.py::test_generator_uses_random_function FAILED [ 63%]\ntests/test_async_generator.py::test_generator_custom_count FAILED        [ 72%]\ntests/test_async_generator.py::test_generator_custom_delay FAILED        [ 81%]\ntests/test_async_generator.py::test_generator_custom_range FAILED        [ 90%]\ntests/test_async_generator.py::test_generator_works_with_asyncio_loop FAILED [100%]\n\n=================================== FAILURES ===================================\n_____________________ test_generator_yields_correct_count ______________________\ntests/test_async_generator.py:51: in test_generator_yields_correct_count\n    async for value in async_generator(sleep_func=mock_sleep, random_func=mock_random):\nE   TypeError: async_generator() got an unexpected keyword argument 'sleep_func'\n\nDuring handling of the above exception, another exception occurred:\ntests/test_async_generator.py:55: in test_generator_yields_correct_count\n    pytest.fail(\"Generator does not support dependency injection parameters\")\nE   Failed: Generator does not support dependency injection parameters\n_________________________ test_generator_yields_floats _________________________\ntests/test_async_generator.py:70: in test_generator_yields_floats\n    async for value in async_generator(sleep_func=mock_sleep, random_func=mock_random):\nE   TypeError: async_generator() got an unexpected keyword argument 'sleep_func'\n\nDuring handling of the above exception, another exception occurred:\ntests/test_async_generator.py:73: in test_generator_yields_floats\n    pytest.fail(\"Generator does not support dependency injection parameters\")\nE   Failed: Generator does not support dependency injection parameters\n________________________ test_generator_values_in_range ________________________\ntests/test_async_generator.py:86: in test_generator_values_in_range\n    async for value in async_generator(sleep_func=mock_sleep, random_func=mock_random):\nE   TypeError: async_generator() got an unexpected keyword argument 'sleep_func'\n\nDuring handling of the above exception, another exception occurred:\ntests/test_async_generator.py:89: in test_generator_values_in_range\n    pytest.fail(\"Generator does not support dependency injection parameters\")\nE   Failed: Generator does not support dependency injection parameters\n________________________ test_generator_respects_delay _________________________\ntests/test_async_generator.py:104: in test_generator_respects_delay\n    async for _ in async_generator(sleep_func=mock_sleep, random_func=mock_random):\nE   TypeError: async_generator() got an unexpected keyword argument 'sleep_func'\n\nDuring handling of the above exception, another exception occurred:\ntests/test_async_generator.py:110: in test_generator_respects_delay\n    pytest.fail(\"Generator does not support dependency injection parameters\")\nE   Failed: Generator does not support dependency injection parameters\n_____________________ test_generator_uses_random_function ______________________\ntests/test_async_generator.py:126: in test_generator_uses_random_function\n    async for _ in async_generator(sleep_func=mock_sleep, random_func=mock_random):\nE   TypeError: async_generator() got an unexpected keyword argument 'sleep_func'\n\nDuring handling of the above exception, another exception occurred:\ntests/test_async_generator.py:131: in test_generator_uses_random_function\n    pytest.fail(\"Generator does not support dependency injection parameters\")\nE   Failed: Generator does not support dependency injection parameters\n_________________________ test_generator_custom_count __________________________\ntests/test_async_generator.py:145: in test_generator_custom_count\n    async for value in async_generator(\nE   TypeError: async_generator() got an unexpected keyword argument 'sleep_func'\n\nDuring handling of the above exception, another exception occurred:\ntests/test_async_generator.py:154: in test_generator_custom_count\n    pytest.fail(\"Generator does not support configurable count parameter\")\nE   Failed: Generator does not support configurable count parameter\n_________________________ test_generator_custom_delay __________________________\ntests/test_async_generator.py:169: in test_generator_custom_delay\n    async for _ in async_generator(\nE   TypeError: async_generator() got an unexpected keyword argument 'sleep_func'\n\nDuring handling of the above exception, another exception occurred:\ntests/test_async_generator.py:178: in test_generator_custom_delay\n    pytest.fail(\"Generator does not support configurable delay parameter\")\nE   Failed: Generator does not support configurable delay parameter\n_________________________ test_generator_custom_range __________________________\ntests/test_async_generator.py:191: in test_generator_custom_range\n    async for value in async_generator(\nE   TypeError: async_generator() got an unexpected keyword argument 'sleep_func'\n\nDuring handling of the above exception, another exception occurred:\ntests/test_async_generator.py:199: in test_generator_custom_range\n    pytest.fail(\"Generator does not support configurable range parameters\")\nE   Failed: Generator does not support configurable range parameters\n____________________ test_generator_works_with_asyncio_loop ____________________\ntests/test_async_generator.py:214: in test_generator_works_with_asyncio_loop\n    async for value in async_generator(sleep_func=mock_sleep, random_func=mock_random):\nE   TypeError: async_generator() got an unexpected keyword argument 'sleep_func'\n\nDuring handling of the above exception, another exception occurred:\ntests/test_async_generator.py:219: in test_generator_works_with_asyncio_loop\n    pytest.fail(\"Generator does not support dependency injection parameters\")\nE   Failed: Generator does not support dependency injection parameters\n=========================== short test summary info ============================\nFAILED tests/test_async_generator.py::test_generator_yields_correct_count - F...\nFAILED tests/test_async_generator.py::test_generator_yields_floats - Failed: ...\nFAILED tests/test_async_generator.py::test_generator_values_in_range - Failed...\nFAILED tests/test_async_generator.py::test_generator_respects_delay - Failed:...\nFAILED tests/test_async_generator.py::test_generator_uses_random_function - F...\nFAILED tests/test_async_generator.py::test_generator_custom_count - Failed: G...\nFAILED tests/test_async_generator.py::test_generator_custom_delay - Failed: G...\nFAILED tests/test_async_generator.py::test_generator_custom_range - Failed: G...\nFAILED tests/test_async_generator.py::test_generator_works_with_asyncio_loop\n========================= 9 failed, 2 passed in 0.16s ==========================\n",
+      "stderr": ""
+    },
+    "after": {
+      "success": true,
+      "exit_code": 0,
+      "tests": [
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_exists",
+          "name": "test_generator_exists",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_is_async",
+          "name": "test_generator_is_async",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_yields_correct_count",
+          "name": "test_generator_yields_correct_count",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_yields_floats",
+          "name": "test_generator_yields_floats",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_values_in_range",
+          "name": "test_generator_values_in_range",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_respects_delay",
+          "name": "test_generator_respects_delay",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_uses_random_function",
+          "name": "test_generator_uses_random_function",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_custom_count",
+          "name": "test_generator_custom_count",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_custom_delay",
+          "name": "test_generator_custom_delay",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_custom_range",
+          "name": "test_generator_custom_range",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_async_generator.py::test_generator_works_with_asyncio_loop",
+          "name": "test_generator_works_with_asyncio_loop",
+          "outcome": "passed"
+        }
+      ],
+      "summary": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.14, pytest-7.4.3, pluggy-1.6.0 -- /usr/local/bin/python3.11\ncachedir: .pytest_cache\nrootdir: /app\nplugins: asyncio-0.21.1\nasyncio: mode=Mode.STRICT\ncollecting ... collected 11 items\n\ntests/test_async_generator.py::test_generator_exists PASSED              [  9%]\ntests/test_async_generator.py::test_generator_is_async PASSED            [ 18%]\ntests/test_async_generator.py::test_generator_yields_correct_count PASSED [ 27%]\ntests/test_async_generator.py::test_generator_yields_floats PASSED       [ 36%]\ntests/test_async_generator.py::test_generator_values_in_range PASSED     [ 45%]\ntests/test_async_generator.py::test_generator_respects_delay PASSED      [ 54%]\ntests/test_async_generator.py::test_generator_uses_random_function PASSED [ 63%]\ntests/test_async_generator.py::test_generator_custom_count PASSED        [ 72%]\ntests/test_async_generator.py::test_generator_custom_delay PASSED        [ 81%]\ntests/test_async_generator.py::test_generator_custom_range PASSED        [ 90%]\ntests/test_async_generator.py::test_generator_works_with_asyncio_loop PASSED [100%]\n\n============================== 11 passed in 0.04s ==============================\n",
+      "stderr": ""
+    },
+    "comparison": {
+      "before_tests_passed": false,
+      "after_tests_passed": true,
+      "before_total": 11,
+      "before_passed": 2,
+      "before_failed": 9,
+      "after_total": 11,
+      "after_passed": 11,
+      "after_failed": 0
+    }
+  }
+}

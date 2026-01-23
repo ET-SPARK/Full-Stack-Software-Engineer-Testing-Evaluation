@@ -1,0 +1,169 @@
+{
+  "run_id": "83d3ba53",
+  "started_at": "2026-01-17T08:55:06.227Z",
+  "finished_at": "2026-01-17T08:55:07.130Z",
+  "duration_seconds": 0.9,
+  "success": true,
+  "error": null,
+  "environment": {
+    "node_version": "v18.20.8",
+    "platform": "Linux e67206ccc3e9 6.14.0-37-generic #37~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov 20 10:25:38 UTC 2 x86_64 GNU/Linux",
+    "os": "linux",
+    "architecture": "x64",
+    "hostname": "e67206ccc3e9",
+    "git_commit": "unknown",
+    "git_branch": "unknown"
+  },
+  "results": {
+    "before": {
+      "success": false,
+      "exit_code": 1,
+      "tests": [
+        {
+          "nodeid": "test_passed_0",
+          "name": "test_passed_0",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_passed_1",
+          "name": "test_passed_1",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_passed_2",
+          "name": "test_passed_2",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_passed_3",
+          "name": "test_passed_3",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_passed_4",
+          "name": "test_passed_4",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_passed_5",
+          "name": "test_passed_5",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_passed_6",
+          "name": "test_passed_6",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_failed_0",
+          "name": "test_failed_0",
+          "outcome": "failed"
+        },
+        {
+          "nodeid": "test_failed_1",
+          "name": "test_failed_1",
+          "outcome": "failed"
+        },
+        {
+          "nodeid": "test_failed_2",
+          "name": "test_failed_2",
+          "outcome": "failed"
+        },
+        {
+          "nodeid": "test_failed_3",
+          "name": "test_failed_3",
+          "outcome": "failed"
+        }
+      ],
+      "summary": {
+        "total": 11,
+        "passed": 7,
+        "failed": 4,
+        "errors": 0,
+        "skipped": 0
+      },
+      "stdout": "\n> upload-manager-tests@1.0.0 test\n> node ghost-state-test.js\n\nTesting repository: ../repository_before\nComponent path: /app/repository_before/src/components/UploadManager.jsx\n✓ Component exists\n✓ Component imports React\n✓ Component has useState\n✓ Component has handleUpload function\n✓ Component has cancel function\n  Component has 34 lines\n✓ Component stays under 50 lines\n✓ Component has basic error handling\n✗ Has upload ID tracking (prevents ghost state)\n✗ Has timer cleanup mechanism\n✗ Has state guards to prevent stale updates\n✗ Clears timers on new upload attempts\n\n==================================================\nTEST RESULTS\n==================================================\nTotal tests: 11\nPassed: 7\nFailed: 4\nSuccess rate: 64%\n\nExpected: Some tests should fail (ghost state bugs present)\n",
+      "stderr": "Command failed: cd tests && REPO_PATH=../repository_before npm test"
+    },
+    "after": {
+      "success": true,
+      "exit_code": 0,
+      "tests": [
+        {
+          "nodeid": "test_passed_0",
+          "name": "test_passed_0",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_passed_1",
+          "name": "test_passed_1",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_passed_2",
+          "name": "test_passed_2",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_passed_3",
+          "name": "test_passed_3",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_passed_4",
+          "name": "test_passed_4",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_passed_5",
+          "name": "test_passed_5",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_passed_6",
+          "name": "test_passed_6",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_passed_7",
+          "name": "test_passed_7",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_passed_8",
+          "name": "test_passed_8",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_passed_9",
+          "name": "test_passed_9",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_passed_10",
+          "name": "test_passed_10",
+          "outcome": "passed"
+        }
+      ],
+      "summary": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "stdout": "\n> upload-manager-tests@1.0.0 test\n> node ghost-state-test.js\n\nTesting repository: ../repository_after\nComponent path: /app/repository_after/src/components/UploadManager.jsx\n✓ Component exists\n✓ Component imports React\n✓ Component has useState\n✓ Component has handleUpload function\n✓ Component has cancel function\n  Component has 47 lines\n✓ Component stays under 50 lines\n✓ Component has basic error handling\n✓ Has upload ID tracking (prevents ghost state)\n✓ Has timer cleanup mechanism\n✓ Has state guards to prevent stale updates\n✓ Clears timers on new upload attempts\n\n==================================================\nTEST RESULTS\n==================================================\nTotal tests: 11\nPassed: 11\nFailed: 0\nSuccess rate: 100%\n\nExpected: All tests should pass (ghost state bugs fixed)\n",
+      "stderr": ""
+    },
+    "comparison": {
+      "before_tests_passed": false,
+      "after_tests_passed": true,
+      "before_total": 11,
+      "before_passed": 7,
+      "before_failed": 4,
+      "after_total": 11,
+      "after_passed": 11,
+      "after_failed": 0
+    }
+  }
+}

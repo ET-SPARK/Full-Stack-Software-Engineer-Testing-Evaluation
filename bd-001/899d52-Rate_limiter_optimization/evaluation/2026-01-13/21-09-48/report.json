@@ -1,0 +1,422 @@
+{
+  "run_id": "e76c6956",
+  "started_at": "2026-01-13T21:09:46.947947",
+  "finished_at": "2026-01-13T21:09:48.627578",
+  "duration_seconds": 1.679631,
+  "success": true,
+  "error": null,
+  "environment": {
+    "python_version": "3.11.14",
+    "platform": "Linux-6.14.0-37-generic-x86_64-with-glibc2.41",
+    "os": "Linux",
+    "os_release": "6.14.0-37-generic",
+    "architecture": "x86_64",
+    "hostname": "719d917deb0f",
+    "git_commit": "unknown",
+    "git_branch": "unknown"
+  },
+  "results": {
+    "before": {
+      "success": true,
+      "exit_code": 0,
+      "tests": [
+        {
+          "nodeid": "tests/test_after.py::TestAfterBasicFunctionality::test_can_instantiate",
+          "name": "test_can_instantiate",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterBasicFunctionality::test_allows_requests_under_limit",
+          "name": "test_allows_requests_under_limit",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterBasicFunctionality::test_blocks_requests_over_limit",
+          "name": "test_blocks_requests_over_limit",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterBasicFunctionality::test_has_rate_attribute",
+          "name": "test_has_rate_attribute",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterBasicFunctionality::test_accepts_user_id_parameter",
+          "name": "test_accepts_user_id_parameter",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterPerUserIsolation::test_per_user_isolation",
+          "name": "test_per_user_isolation",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterPerUserIsolation::test_many_users_independent",
+          "name": "test_many_users_independent",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterTokenRefill::test_tokens_refill_over_time",
+          "name": "test_tokens_refill_over_time",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterTokenRefill::test_tokens_cap_at_capacity",
+          "name": "test_tokens_cap_at_capacity",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterClockSkew::test_handles_minor_clock_skew",
+          "name": "test_handles_minor_clock_skew",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterClockSkew::test_handles_significant_clock_skew",
+          "name": "test_handles_significant_clock_skew",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterClockSkew::test_forward_time_always_works",
+          "name": "test_forward_time_always_works",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterDynamicRateChange::test_rate_increase_preserves_tokens",
+          "name": "test_rate_increase_preserves_tokens",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterDynamicRateChange::test_rate_decrease_preserves_proportional_tokens",
+          "name": "test_rate_decrease_preserves_proportional_tokens",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterDynamicRateChange::test_rate_change_affects_new_users",
+          "name": "test_rate_change_affects_new_users",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_before.py::TestBeforeBasicStructure::test_class_exists",
+          "name": "test_class_exists",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_before.py::TestBeforeBasicStructure::test_has_allow_request_method",
+          "name": "test_has_allow_request_method",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_before.py::TestBeforeBasicStructure::test_has_refill_tokens_method",
+          "name": "test_has_refill_tokens_method",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_before.py::TestBeforeDocumentedLimitations::test_documents_not_thread_safe",
+          "name": "test_documents_not_thread_safe",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_before.py::TestBeforeDocumentedLimitations::test_documents_ignores_user_id",
+          "name": "test_documents_ignores_user_id",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_before.py::TestBeforeDocumentedLimitations::test_has_no_update_rate_method",
+          "name": "test_has_no_update_rate_method",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_before.py::TestBeforeKnownBugs::test_has_import_bug",
+          "name": "test_has_import_bug",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_class_name_matches",
+          "name": "test_class_name_matches",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_allow_request_method_exists_on_class",
+          "name": "test_allow_request_method_exists_on_class",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_allow_request_signature_compatible",
+          "name": "test_allow_request_signature_compatible",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_token_bucket_class_exists",
+          "name": "test_token_bucket_class_exists",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_no_external_dependencies",
+          "name": "test_no_external_dependencies",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_uses_slots_for_memory_efficiency",
+          "name": "test_uses_slots_for_memory_efficiency",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_has_update_rate_method",
+          "name": "test_has_update_rate_method",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_bucket_memory_under_1kb",
+          "name": "test_bucket_memory_under_1kb",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_concurrent_requests_no_race_conditions",
+          "name": "test_concurrent_requests_no_race_conditions",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_concurrent_same_user_rate_limiting",
+          "name": "test_concurrent_same_user_rate_limiting",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_cleanup_removes_inactive_buckets",
+          "name": "test_cleanup_removes_inactive_buckets",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_rate_change_1000_to_5000",
+          "name": "test_rate_change_1000_to_5000",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_no_double_counting_at_refill",
+          "name": "test_no_double_counting_at_refill",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_atomic_token_consumption",
+          "name": "test_atomic_token_consumption",
+          "outcome": "passed"
+        }
+      ],
+      "summary": {
+        "total": 36,
+        "passed": 36,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xfailed": 0
+      },
+      "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.14, pytest-9.0.2, pluggy-1.6.0 -- /usr/local/bin/python\ncachedir: .pytest_cache\nrootdir: /app\ncollecting ... collected 36 items\n\ntests/test_after.py::TestAfterBasicFunctionality::test_can_instantiate PASSED [  2%]\ntests/test_after.py::TestAfterBasicFunctionality::test_allows_requests_under_limit PASSED [  5%]\ntests/test_after.py::TestAfterBasicFunctionality::test_blocks_requests_over_limit PASSED [  8%]\ntests/test_after.py::TestAfterBasicFunctionality::test_has_rate_attribute PASSED [ 11%]\ntests/test_after.py::TestAfterBasicFunctionality::test_accepts_user_id_parameter PASSED [ 13%]\ntests/test_after.py::TestAfterPerUserIsolation::test_per_user_isolation PASSED [ 16%]\ntests/test_after.py::TestAfterPerUserIsolation::test_many_users_independent PASSED [ 19%]\ntests/test_after.py::TestAfterTokenRefill::test_tokens_refill_over_time PASSED [ 22%]\ntests/test_after.py::TestAfterTokenRefill::test_tokens_cap_at_capacity PASSED [ 25%]\ntests/test_after.py::TestAfterClockSkew::test_handles_minor_clock_skew PASSED [ 27%]\ntests/test_after.py::TestAfterClockSkew::test_handles_significant_clock_skew PASSED [ 30%]\ntests/test_after.py::TestAfterClockSkew::test_forward_time_always_works PASSED [ 33%]\ntests/test_after.py::TestAfterDynamicRateChange::test_rate_increase_preserves_tokens PASSED [ 36%]\ntests/test_after.py::TestAfterDynamicRateChange::test_rate_decrease_preserves_proportional_tokens PASSED [ 38%]\ntests/test_after.py::TestAfterDynamicRateChange::test_rate_change_affects_new_users PASSED [ 41%]\ntests/test_before.py::TestBeforeBasicStructure::test_class_exists PASSED [ 44%]\ntests/test_before.py::TestBeforeBasicStructure::test_has_allow_request_method PASSED [ 47%]\ntests/test_before.py::TestBeforeBasicStructure::test_has_refill_tokens_method PASSED [ 50%]\ntests/test_before.py::TestBeforeDocumentedLimitations::test_documents_not_thread_safe PASSED [ 52%]\ntests/test_before.py::TestBeforeDocumentedLimitations::test_documents_ignores_user_id PASSED [ 55%]\ntests/test_before.py::TestBeforeDocumentedLimitations::test_has_no_update_rate_method PASSED [ 58%]\ntests/test_before.py::TestBeforeKnownBugs::test_has_import_bug PASSED    [ 61%]\ntests/test_equivalence.py::test_class_name_matches PASSED                [ 63%]\ntests/test_equivalence.py::test_allow_request_method_exists_on_class PASSED [ 66%]\ntests/test_equivalence.py::test_allow_request_signature_compatible PASSED [ 69%]\ntests/test_structure.py::test_token_bucket_class_exists PASSED           [ 72%]\ntests/test_structure.py::test_no_external_dependencies PASSED            [ 75%]\ntests/test_structure.py::test_uses_slots_for_memory_efficiency PASSED    [ 77%]\ntests/test_structure.py::test_has_update_rate_method PASSED              [ 80%]\ntests/test_structure.py::test_bucket_memory_under_1kb PASSED             [ 83%]\ntests/test_structure.py::test_concurrent_requests_no_race_conditions PASSED [ 86%]\ntests/test_structure.py::test_concurrent_same_user_rate_limiting PASSED  [ 88%]\ntests/test_structure.py::test_cleanup_removes_inactive_buckets PASSED    [ 91%]\ntests/test_structure.py::test_rate_change_1000_to_5000 PASSED            [ 94%]\ntests/test_structure.py::test_no_double_counting_at_refill PASSED        [ 97%]\ntests/test_structure.py::test_atomic_token_consumption PASSED            [100%]\n\n============================== 36 passed in 0.23s ==============================\n",
+      "stderr": ""
+    },
+    "after": {
+      "success": true,
+      "exit_code": 0,
+      "tests": [
+        {
+          "nodeid": "tests/test_after.py::TestAfterBasicFunctionality::test_can_instantiate",
+          "name": "test_can_instantiate",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterBasicFunctionality::test_allows_requests_under_limit",
+          "name": "test_allows_requests_under_limit",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterBasicFunctionality::test_blocks_requests_over_limit",
+          "name": "test_blocks_requests_over_limit",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterBasicFunctionality::test_has_rate_attribute",
+          "name": "test_has_rate_attribute",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterBasicFunctionality::test_accepts_user_id_parameter",
+          "name": "test_accepts_user_id_parameter",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterPerUserIsolation::test_per_user_isolation",
+          "name": "test_per_user_isolation",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterPerUserIsolation::test_many_users_independent",
+          "name": "test_many_users_independent",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterTokenRefill::test_tokens_refill_over_time",
+          "name": "test_tokens_refill_over_time",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterTokenRefill::test_tokens_cap_at_capacity",
+          "name": "test_tokens_cap_at_capacity",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterClockSkew::test_handles_minor_clock_skew",
+          "name": "test_handles_minor_clock_skew",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterClockSkew::test_handles_significant_clock_skew",
+          "name": "test_handles_significant_clock_skew",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterClockSkew::test_forward_time_always_works",
+          "name": "test_forward_time_always_works",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterDynamicRateChange::test_rate_increase_preserves_tokens",
+          "name": "test_rate_increase_preserves_tokens",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterDynamicRateChange::test_rate_decrease_preserves_proportional_tokens",
+          "name": "test_rate_decrease_preserves_proportional_tokens",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_after.py::TestAfterDynamicRateChange::test_rate_change_affects_new_users",
+          "name": "test_rate_change_affects_new_users",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_before.py::TestBeforeBasicStructure::test_class_exists",
+          "name": "test_class_exists",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_before.py::TestBeforeBasicStructure::test_has_allow_request_method",
+          "name": "test_has_allow_request_method",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_before.py::TestBeforeBasicStructure::test_has_refill_tokens_method",
+          "name": "test_has_refill_tokens_method",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_before.py::TestBeforeDocumentedLimitations::test_documents_not_thread_safe",
+          "name": "test_documents_not_thread_safe",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_before.py::TestBeforeDocumentedLimitations::test_documents_ignores_user_id",
+          "name": "test_documents_ignores_user_id",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_before.py::TestBeforeDocumentedLimitations::test_has_no_update_rate_method",
+          "name": "test_has_no_update_rate_method",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_before.py::TestBeforeKnownBugs::test_has_import_bug",
+          "name": "test_has_import_bug",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_class_name_matches",
+          "name": "test_class_name_matches",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_allow_request_method_exists_on_class",
+          "name": "test_allow_request_method_exists_on_class",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_allow_request_signature_compatible",
+          "name": "test_allow_request_signature_compatible",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_token_bucket_class_exists",
+          "name": "test_token_bucket_class_exists",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_no_external_dependencies",
+          "name": "test_no_external_dependencies",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_uses_slots_for_memory_efficiency",
+          "name": "test_uses_slots_for_memory_efficiency",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_has_update_rate_method",
+          "name": "test_has_update_rate_method",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_bucket_memory_under_1kb",
+          "name": "test_bucket_memory_under_1kb",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_concurrent_requests_no_race_conditions",
+          "name": "test_concurrent_requests_no_race_conditions",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_concurrent_same_user_rate_limiting",
+          "name": "test_concurrent_same_user_rate_limiting",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_cleanup_removes_inactive_buckets",
+          "name": "test_cleanup_removes_inactive_buckets",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_rate_change_1000_to_5000",
+          "name": "test_rate_change_1000_to_5000",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_no_double_counting_at_refill",
+          "name": "test_no_double_counting_at_refill",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_structure.py::test_atomic_token_consumption",
+          "name": "test_atomic_token_consumption",
+          "outcome": "passed"
+        }
+      ],
+      "summary": {
+        "total": 36,
+        "passed": 36,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xfailed": 0
+      },
+      "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.14, pytest-9.0.2, pluggy-1.6.0 -- /usr/local/bin/python\ncachedir: .pytest_cache\nrootdir: /app\ncollecting ... collected 36 items\n\ntests/test_after.py::TestAfterBasicFunctionality::test_can_instantiate PASSED [  2%]\ntests/test_after.py::TestAfterBasicFunctionality::test_allows_requests_under_limit PASSED [  5%]\ntests/test_after.py::TestAfterBasicFunctionality::test_blocks_requests_over_limit PASSED [  8%]\ntests/test_after.py::TestAfterBasicFunctionality::test_has_rate_attribute PASSED [ 11%]\ntests/test_after.py::TestAfterBasicFunctionality::test_accepts_user_id_parameter PASSED [ 13%]\ntests/test_after.py::TestAfterPerUserIsolation::test_per_user_isolation PASSED [ 16%]\ntests/test_after.py::TestAfterPerUserIsolation::test_many_users_independent PASSED [ 19%]\ntests/test_after.py::TestAfterTokenRefill::test_tokens_refill_over_time PASSED [ 22%]\ntests/test_after.py::TestAfterTokenRefill::test_tokens_cap_at_capacity PASSED [ 25%]\ntests/test_after.py::TestAfterClockSkew::test_handles_minor_clock_skew PASSED [ 27%]\ntests/test_after.py::TestAfterClockSkew::test_handles_significant_clock_skew PASSED [ 30%]\ntests/test_after.py::TestAfterClockSkew::test_forward_time_always_works PASSED [ 33%]\ntests/test_after.py::TestAfterDynamicRateChange::test_rate_increase_preserves_tokens PASSED [ 36%]\ntests/test_after.py::TestAfterDynamicRateChange::test_rate_decrease_preserves_proportional_tokens PASSED [ 38%]\ntests/test_after.py::TestAfterDynamicRateChange::test_rate_change_affects_new_users PASSED [ 41%]\ntests/test_before.py::TestBeforeBasicStructure::test_class_exists PASSED [ 44%]\ntests/test_before.py::TestBeforeBasicStructure::test_has_allow_request_method PASSED [ 47%]\ntests/test_before.py::TestBeforeBasicStructure::test_has_refill_tokens_method PASSED [ 50%]\ntests/test_before.py::TestBeforeDocumentedLimitations::test_documents_not_thread_safe PASSED [ 52%]\ntests/test_before.py::TestBeforeDocumentedLimitations::test_documents_ignores_user_id PASSED [ 55%]\ntests/test_before.py::TestBeforeDocumentedLimitations::test_has_no_update_rate_method PASSED [ 58%]\ntests/test_before.py::TestBeforeKnownBugs::test_has_import_bug PASSED    [ 61%]\ntests/test_equivalence.py::test_class_name_matches PASSED                [ 63%]\ntests/test_equivalence.py::test_allow_request_method_exists_on_class PASSED [ 66%]\ntests/test_equivalence.py::test_allow_request_signature_compatible PASSED [ 69%]\ntests/test_structure.py::test_token_bucket_class_exists PASSED           [ 72%]\ntests/test_structure.py::test_no_external_dependencies PASSED            [ 75%]\ntests/test_structure.py::test_uses_slots_for_memory_efficiency PASSED    [ 77%]\ntests/test_structure.py::test_has_update_rate_method PASSED              [ 80%]\ntests/test_structure.py::test_bucket_memory_under_1kb PASSED             [ 83%]\ntests/test_structure.py::test_concurrent_requests_no_race_conditions PASSED [ 86%]\ntests/test_structure.py::test_concurrent_same_user_rate_limiting PASSED  [ 88%]\ntests/test_structure.py::test_cleanup_removes_inactive_buckets PASSED    [ 91%]\ntests/test_structure.py::test_rate_change_1000_to_5000 PASSED            [ 94%]\ntests/test_structure.py::test_no_double_counting_at_refill PASSED        [ 97%]\ntests/test_structure.py::test_atomic_token_consumption PASSED            [100%]\n\n============================== 36 passed in 0.13s ==============================\n",
+      "stderr": ""
+    },
+    "comparison": {
+      "before_tests_passed": true,
+      "after_tests_passed": true,
+      "before_total": 36,
+      "before_passed": 36,
+      "before_failed": 0,
+      "after_total": 36,
+      "after_passed": 36,
+      "after_failed": 0
+    }
+  }
+}

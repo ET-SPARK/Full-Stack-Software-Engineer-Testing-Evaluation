@@ -1,0 +1,262 @@
+{
+  "run_id": "2c9f39d3",
+  "started_at": "2026-01-13T21:25:45.812627",
+  "finished_at": "2026-01-13T21:25:47.948466",
+  "duration_seconds": 2.135839,
+  "success": true,
+  "error": null,
+  "environment": {
+    "python_version": "3.11.14",
+    "platform": "Linux-6.14.0-37-generic-x86_64-with-glibc2.41",
+    "os": "Linux",
+    "os_release": "6.14.0-37-generic",
+    "architecture": "x86_64",
+    "hostname": "3f5393e01c5c",
+    "git_commit": "unknown",
+    "git_branch": "unknown"
+  },
+  "results": {
+    "before": {
+      "success": false,
+      "exit_code": 1,
+      "tests": [
+        {
+          "nodeid": "tests/test_equivalence.py::test_class_name_matches",
+          "name": "test_class_name_matches",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_allow_request_method_exists_on_class",
+          "name": "test_allow_request_method_exists_on_class",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_allow_request_signature_compatible",
+          "name": "test_allow_request_signature_compatible",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement1TokenBucketAlgorithm::test_token_bucket_class_exists",
+          "name": "test_token_bucket_class_exists",
+          "outcome": "failed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement1TokenBucketAlgorithm::test_no_external_dependencies",
+          "name": "test_no_external_dependencies",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement1TokenBucketAlgorithm::test_basic_token_bucket_behavior",
+          "name": "test_basic_token_bucket_behavior",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement2DynamicRateAdjustment::test_has_update_rate_method",
+          "name": "test_has_update_rate_method",
+          "outcome": "failed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement2DynamicRateAdjustment::test_rate_change_1000_to_5000_preserves_tokens",
+          "name": "test_rate_change_1000_to_5000_preserves_tokens",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement2DynamicRateAdjustment::test_rate_change_without_dropping_requests",
+          "name": "test_rate_change_without_dropping_requests",
+          "outcome": "failed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement3ClockSkewHandling::test_handles_minor_clock_skew_100ms",
+          "name": "test_handles_minor_clock_skew_100ms",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement3ClockSkewHandling::test_handles_significant_clock_skew",
+          "name": "test_handles_significant_clock_skew",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement4ThreadSafety::test_concurrent_100_threads_no_race_conditions",
+          "name": "test_concurrent_100_threads_no_race_conditions",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement4ThreadSafety::test_concurrent_same_user_rate_limiting",
+          "name": "test_concurrent_same_user_rate_limiting",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement5MemoryEfficiency::test_uses_slots_for_memory_efficiency",
+          "name": "test_uses_slots_for_memory_efficiency",
+          "outcome": "failed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement5MemoryEfficiency::test_bucket_memory_under_1kb",
+          "name": "test_bucket_memory_under_1kb",
+          "outcome": "failed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement5MemoryEfficiency::test_cleanup_removes_inactive_buckets",
+          "name": "test_cleanup_removes_inactive_buckets",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement6ExactlyOnceSemantics::test_no_double_counting_at_refill",
+          "name": "test_no_double_counting_at_refill",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement6ExactlyOnceSemantics::test_atomic_token_consumption",
+          "name": "test_atomic_token_consumption",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement6ExactlyOnceSemantics::test_window_transition_consistency",
+          "name": "test_window_transition_consistency",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestPerUserIsolation::test_per_user_isolation",
+          "name": "test_per_user_isolation",
+          "outcome": "passed"
+        }
+      ],
+      "summary": {
+        "total": 20,
+        "passed": 15,
+        "failed": 5,
+        "errors": 0,
+        "skipped": 0,
+        "xfailed": 0
+      },
+      "stdout": "Requirement1TokenBucketAlgorithm::test_no_external_dependencies PASSED [ 25%]\ntests/test_rate_limiter.py::TestRequirement1TokenBucketAlgorithm::test_basic_token_bucket_behavior PASSED [ 30%]\ntests/test_rate_limiter.py::TestRequirement2DynamicRateAdjustment::test_has_update_rate_method FAILED [ 35%]\ntests/test_rate_limiter.py::TestRequirement2DynamicRateAdjustment::test_rate_change_1000_to_5000_preserves_tokens PASSED [ 40%]\ntests/test_rate_limiter.py::TestRequirement2DynamicRateAdjustment::test_rate_change_without_dropping_requests FAILED [ 45%]\ntests/test_rate_limiter.py::TestRequirement3ClockSkewHandling::test_handles_minor_clock_skew_100ms PASSED [ 50%]\ntests/test_rate_limiter.py::TestRequirement3ClockSkewHandling::test_handles_significant_clock_skew PASSED [ 55%]\ntests/test_rate_limiter.py::TestRequirement4ThreadSafety::test_concurrent_100_threads_no_race_conditions PASSED [ 60%]\ntests/test_rate_limiter.py::TestRequirement4ThreadSafety::test_concurrent_same_user_rate_limiting PASSED [ 65%]\ntests/test_rate_limiter.py::TestRequirement5MemoryEfficiency::test_uses_slots_for_memory_efficiency FAILED [ 70%]\ntests/test_rate_limiter.py::TestRequirement5MemoryEfficiency::test_bucket_memory_under_1kb FAILED [ 75%]\ntests/test_rate_limiter.py::TestRequirement5MemoryEfficiency::test_cleanup_removes_inactive_buckets PASSED [ 80%]\ntests/test_rate_limiter.py::TestRequirement6ExactlyOnceSemantics::test_no_double_counting_at_refill PASSED [ 85%]\ntests/test_rate_limiter.py::TestRequirement6ExactlyOnceSemantics::test_atomic_token_consumption PASSED [ 90%]\ntests/test_rate_limiter.py::TestRequirement6ExactlyOnceSemantics::test_window_transition_consistency PASSED [ 95%]\ntests/test_rate_limiter.py::TestPerUserIsolation::test_per_user_isolation PASSED [100%]\n\n=================================== FAILURES ===================================\n_____ TestRequirement1TokenBucketAlgorithm.test_token_bucket_class_exists ______\ntests/test_rate_limiter.py:43: in test_token_bucket_class_exists\n    assert hasattr(module, 'TokenBucket'), \"Before implementation missing TokenBucket class - requirement 1 not met\"\nE   AssertionError: Before implementation missing TokenBucket class - requirement 1 not met\nE   assert False\nE    +  where False = hasattr(<module 'repository_before.rate_limiter' from '/app/repository_before/rate_limiter.py'>, 'TokenBucket')\n______ TestRequirement2DynamicRateAdjustment.test_has_update_rate_method _______\ntests/test_rate_limiter.py:87: in test_has_update_rate_method\n    assert hasattr(RateLimiter, 'update_rate'), \"Before implementation missing update_rate method - requirement 2 not met\"\nE   AssertionError: Before implementation missing update_rate method - requirement 2 not met\nE   assert False\nE    +  where False = hasattr(<class 'repository_before.rate_limiter.RateLimiter'>, 'update_rate')\n_ TestRequirement2DynamicRateAdjustment.test_rate_change_without_dropping_requests _\ntests/test_rate_limiter.py:127: in test_rate_change_without_dropping_requests\n    assert hasattr(limiter_class, 'update_rate'), \"Before implementation cannot change rates - requirement 2 not met\"\nE   AssertionError: Before implementation cannot change rates - requirement 2 not met\nE   assert False\nE    +  where False = hasattr(<class 'repository_before.rate_limiter.RateLimiter'>, 'update_rate')\n____ TestRequirement5MemoryEfficiency.test_uses_slots_for_memory_efficiency ____\ntests/test_rate_limiter.py:261: in test_uses_slots_for_memory_efficiency\n    assert hasattr(module, 'TokenBucket'), \"Before implementation missing TokenBucket - requirement 5 not met\"\nE   AssertionError: Before implementation missing TokenBucket - requirement 5 not met\nE   assert False\nE    +  where False = hasattr(<module 'repository_before.rate_limiter' from '/app/repository_before/rate_limiter.py'>, 'TokenBucket')\n________ TestRequirement5MemoryEfficiency.test_bucket_memory_under_1kb _________\ntests/test_rate_limiter.py:272: in test_bucket_memory_under_1kb\n    assert hasattr(module, 'TokenBucket'), \"Before implementation missing TokenBucket - requirement 5 not met\"\nE   AssertionError: Before implementation missing TokenBucket - requirement 5 not met\nE   assert False\nE    +  where False = hasattr(<module 'repository_before.rate_limiter' from '/app/repository_before/rate_limiter.py'>, 'TokenBucket')\n=========================== short test summary info ============================\nFAILED tests/test_rate_limiter.py::TestRequirement1TokenBucketAlgorithm::test_token_bucket_class_exists\nFAILED tests/test_rate_limiter.py::TestRequirement2DynamicRateAdjustment::test_has_update_rate_method\nFAILED tests/test_rate_limiter.py::TestRequirement2DynamicRateAdjustment::test_rate_change_without_dropping_requests\nFAILED tests/test_rate_limiter.py::TestRequirement5MemoryEfficiency::test_uses_slots_for_memory_efficiency\nFAILED tests/test_rate_limiter.py::TestRequirement5MemoryEfficiency::test_bucket_memory_under_1kb\n========================= 5 failed, 15 passed in 0.75s =========================\n",
+      "stderr": ""
+    },
+    "after": {
+      "success": true,
+      "exit_code": 0,
+      "tests": [
+        {
+          "nodeid": "tests/test_equivalence.py::test_class_name_matches",
+          "name": "test_class_name_matches",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_allow_request_method_exists_on_class",
+          "name": "test_allow_request_method_exists_on_class",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_allow_request_signature_compatible",
+          "name": "test_allow_request_signature_compatible",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement1TokenBucketAlgorithm::test_token_bucket_class_exists",
+          "name": "test_token_bucket_class_exists",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement1TokenBucketAlgorithm::test_no_external_dependencies",
+          "name": "test_no_external_dependencies",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement1TokenBucketAlgorithm::test_basic_token_bucket_behavior",
+          "name": "test_basic_token_bucket_behavior",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement2DynamicRateAdjustment::test_has_update_rate_method",
+          "name": "test_has_update_rate_method",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement2DynamicRateAdjustment::test_rate_change_1000_to_5000_preserves_tokens",
+          "name": "test_rate_change_1000_to_5000_preserves_tokens",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement2DynamicRateAdjustment::test_rate_change_without_dropping_requests",
+          "name": "test_rate_change_without_dropping_requests",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement3ClockSkewHandling::test_handles_minor_clock_skew_100ms",
+          "name": "test_handles_minor_clock_skew_100ms",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement3ClockSkewHandling::test_handles_significant_clock_skew",
+          "name": "test_handles_significant_clock_skew",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement4ThreadSafety::test_concurrent_100_threads_no_race_conditions",
+          "name": "test_concurrent_100_threads_no_race_conditions",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement4ThreadSafety::test_concurrent_same_user_rate_limiting",
+          "name": "test_concurrent_same_user_rate_limiting",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement5MemoryEfficiency::test_uses_slots_for_memory_efficiency",
+          "name": "test_uses_slots_for_memory_efficiency",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement5MemoryEfficiency::test_bucket_memory_under_1kb",
+          "name": "test_bucket_memory_under_1kb",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement5MemoryEfficiency::test_cleanup_removes_inactive_buckets",
+          "name": "test_cleanup_removes_inactive_buckets",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement6ExactlyOnceSemantics::test_no_double_counting_at_refill",
+          "name": "test_no_double_counting_at_refill",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement6ExactlyOnceSemantics::test_atomic_token_consumption",
+          "name": "test_atomic_token_consumption",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestRequirement6ExactlyOnceSemantics::test_window_transition_consistency",
+          "name": "test_window_transition_consistency",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "tests/test_rate_limiter.py::TestPerUserIsolation::test_per_user_isolation",
+          "name": "test_per_user_isolation",
+          "outcome": "passed"
+        }
+      ],
+      "summary": {
+        "total": 20,
+        "passed": 20,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xfailed": 0
+      },
+      "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.14, pytest-9.0.2, pluggy-1.6.0 -- /usr/local/bin/python\ncachedir: .pytest_cache\nrootdir: /app\ncollecting ... collected 20 items\n\ntests/test_equivalence.py::test_class_name_matches PASSED                [  5%]\ntests/test_equivalence.py::test_allow_request_method_exists_on_class PASSED [ 10%]\ntests/test_equivalence.py::test_allow_request_signature_compatible PASSED [ 15%]\ntests/test_rate_limiter.py::TestRequirement1TokenBucketAlgorithm::test_token_bucket_class_exists PASSED [ 20%]\ntests/test_rate_limiter.py::TestRequirement1TokenBucketAlgorithm::test_no_external_dependencies PASSED [ 25%]\ntests/test_rate_limiter.py::TestRequirement1TokenBucketAlgorithm::test_basic_token_bucket_behavior PASSED [ 30%]\ntests/test_rate_limiter.py::TestRequirement2DynamicRateAdjustment::test_has_update_rate_method PASSED [ 35%]\ntests/test_rate_limiter.py::TestRequirement2DynamicRateAdjustment::test_rate_change_1000_to_5000_preserves_tokens PASSED [ 40%]\ntests/test_rate_limiter.py::TestRequirement2DynamicRateAdjustment::test_rate_change_without_dropping_requests PASSED [ 45%]\ntests/test_rate_limiter.py::TestRequirement3ClockSkewHandling::test_handles_minor_clock_skew_100ms PASSED [ 50%]\ntests/test_rate_limiter.py::TestRequirement3ClockSkewHandling::test_handles_significant_clock_skew PASSED [ 55%]\ntests/test_rate_limiter.py::TestRequirement4ThreadSafety::test_concurrent_100_threads_no_race_conditions PASSED [ 60%]\ntests/test_rate_limiter.py::TestRequirement4ThreadSafety::test_concurrent_same_user_rate_limiting PASSED [ 65%]\ntests/test_rate_limiter.py::TestRequirement5MemoryEfficiency::test_uses_slots_for_memory_efficiency PASSED [ 70%]\ntests/test_rate_limiter.py::TestRequirement5MemoryEfficiency::test_bucket_memory_under_1kb PASSED [ 75%]\ntests/test_rate_limiter.py::TestRequirement5MemoryEfficiency::test_cleanup_removes_inactive_buckets PASSED [ 80%]\ntests/test_rate_limiter.py::TestRequirement6ExactlyOnceSemantics::test_no_double_counting_at_refill PASSED [ 85%]\ntests/test_rate_limiter.py::TestRequirement6ExactlyOnceSemantics::test_atomic_token_consumption PASSED [ 90%]\ntests/test_rate_limiter.py::TestRequirement6ExactlyOnceSemantics::test_window_transition_consistency PASSED [ 95%]\ntests/test_rate_limiter.py::TestPerUserIsolation::test_per_user_isolation PASSED [100%]\n\n============================== 20 passed in 0.12s ==============================\n",
+      "stderr": ""
+    },
+    "comparison": {
+      "before_tests_passed": false,
+      "after_tests_passed": true,
+      "before_total": 20,
+      "before_passed": 15,
+      "before_failed": 5,
+      "after_total": 20,
+      "after_passed": 20,
+      "after_failed": 0
+    }
+  }
+}

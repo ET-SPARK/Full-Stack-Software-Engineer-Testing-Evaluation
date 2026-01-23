@@ -1,0 +1,64 @@
+{
+  "run_id": "1768497010681-fg5a2h6ji",
+  "started_at": "2026-01-15T17:10:10.678Z",
+  "finished_at": "2026-01-15T17:10:10.681Z",
+  "environment": {
+    "node_version": "v18.20.8",
+    "platform": "linux-x64"
+  },
+  "before": {
+    "metrics": {
+      "has_threading_support": false,
+      "has_parent_id_field": false,
+      "has_parent_relation": false,
+      "has_replies_relation": false,
+      "has_parent_id_index": false,
+      "has_cascade_delete": false,
+      "has_reply_to_message": false,
+      "has_get_replies": false,
+      "has_get_reply_count": false,
+      "has_get_messages_with_reply_count": false,
+      "has_db_text_annotation": false,
+      "has_default_false": false,
+      "has_conversation_cascade": false,
+      "has_indexes": false
+    },
+    "tests": {
+      "passed": 0,
+      "failed": 0,
+      "total": 0,
+      "success": false
+    }
+  },
+  "after": {
+    "metrics": {
+      "has_threading_support": true,
+      "has_parent_id_field": true,
+      "has_parent_relation": true,
+      "has_replies_relation": true,
+      "has_parent_id_index": true,
+      "has_cascade_delete": true,
+      "has_reply_to_message": true,
+      "has_get_replies": true,
+      "has_get_reply_count": true,
+      "has_get_messages_with_reply_count": true,
+      "has_db_text_annotation": true,
+      "has_default_false": true,
+      "has_conversation_cascade": true,
+      "has_indexes": true
+    },
+    "tests": {
+      "passed": 33,
+      "failed": 0,
+      "total": 33,
+      "success": true
+    }
+  },
+  "comparison": {
+    "threading_support_added": true,
+    "methods_implemented": 4,
+    "schema_fixes_applied": true,
+    "tests_fixed": 33
+  },
+  "success": true
+}
