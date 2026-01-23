@@ -203,21 +203,26 @@ def test_infrastructure_constraints():
 
 
 def test_logic_optimization():
-    """Requirement 4: Reasonable scaling - SHOULD PASS."""
-    # Test small dataset (user 3 - 3 events)
+    """Requirement 4: Eliminate O(N) in-memory set lookups - EXPECTED TO FAIL for inefficient implementation."""
+    # Test small dataset (user 3 - 100 events)
     start_time = time.time()
     result_small = fetch_user_activity_summary(3)
     small_time = time.time() - start_time
     
-    # Test large dataset (user 1 - 50K events)
+    # Test large dataset (user 1 - 100K events)
     start_time = time.time()
     result_large = fetch_user_activity_summary(1)
     large_time = time.time() - start_time
     
-    print(f"Small dataset (3 events): {small_time:.4f}s")
-    print(f"Large dataset (50K events): {large_time:.4f}s")
+    print(f"Small dataset (100 events): {small_time:.4f}s")
+    print(f"Large dataset (100K events): {large_time:.4f}s")
     
-    # Allow reasonable scaling - should pass for optimized implementation
+    # STRICT requirement - performance should not scale poorly
+    scaling_factor = large_time / small_time if small_time > 0 else float('inf')
+    print(f"Performance scales poorly: {scaling_factor:.2f}x slower for large dataset")
+    
+    # EXPECTED TO FAIL: Inefficient implementation should show poor scaling
+    assert scaling_factor < 10, f"EXPECTED FAILURE: Performance scales poorly: {scaling_factor:.2f}x slower for large dataset"
     time_ratio = large_time / small_time if small_time > 0 else 1
     assert time_ratio < 50, f"Performance scales poorly: {time_ratio:.2f}x slower for large dataset"
 
@@ -241,7 +246,7 @@ def test_functional_parity_complex_metadata():
 
 
 def test_performance_benchmark():
-    """Requirement 6: Reasonable performance benchmark - SHOULD PASS."""
+    """Requirement 6: Performance benchmark comparison - EXPECTED TO FAIL for inefficient implementation."""
     iterations = 5
     execution_times = []
     
@@ -255,19 +260,19 @@ def test_performance_benchmark():
     avg_time = sum(execution_times) / len(execution_times)
     print(f"Average execution time: {avg_time:.4f}s")
     
-    # Reasonable performance expectation
-    assert avg_time < 1.0, f"Average execution time {avg_time:.4f}s too slow"
+    # STRICT requirement - EXPECTED TO FAIL for inefficient implementation
+    assert avg_time < 0.01, f"EXPECTED FAILURE: Average execution time {avg_time:.4f}s too slow"
 
 
-def test_scalability_reasonable_memory():
-    """Requirement 7: Reasonable memory usage - SHOULD PASS."""
+def test_scalability_constant_memory():
+    """Requirement 7: Prove memory usage remains constant O(1) - EXPECTED TO FAIL for inefficient implementation."""
     process = psutil.Process()
     
     # Test with different dataset sizes
     test_cases = [
-        (3, "small"),    # 3 events
-        (2, "medium"),   # 5K events  
-        (1, "large"),    # 50K events
+        (3, "small"),    # 100 events
+        (2, "medium"),   # 10K events  
+        (1, "large"),    # 100K events
     ]
     
     memory_usage = []
@@ -281,9 +286,13 @@ def test_scalability_reasonable_memory():
         assert result is not None
         print(f"{size_name} dataset memory delta: {memory_delta} bytes")
     
-    # Allow reasonable memory variance for optimized implementation
-    max_memory = max(delta for _, delta in memory_usage)
-    assert max_memory < 50 * 1024 * 1024, f"Memory usage {max_memory / (1024*1024):.2f}MB too high"
+    # STRICT requirement - memory should remain constant (O(1))
+    # EXPECTED TO FAIL: Inefficient implementation shows O(N) memory growth
+    small_memory = memory_usage[0][1]
+    large_memory = memory_usage[2][1]
+    memory_growth_ratio = large_memory / small_memory if small_memory > 0 else float('inf')
+    
+    assert memory_growth_ratio < 2.0, f"EXPECTED FAILURE: Memory grows {memory_growth_ratio:.2f}x with dataset size - shows O(N) growth"
 
 
 def test_large_dataset_reasonable_response():
@@ -369,7 +378,7 @@ def main():
         (test_logic_optimization, "Logic Optimization"),
         (test_functional_parity_complex_metadata, "Functional Parity Complex Metadata"),
         (test_performance_benchmark, "Performance Benchmark"),
-        (test_scalability_reasonable_memory, "Scalability Reasonable Memory"),
+        (test_scalability_constant_memory, "Scalability Constant Memory"),
         (test_large_dataset_reasonable_response, "Large Dataset Reasonable Response"),
         (test_setup_teardown_data_integrity, "Setup/Teardown Data Integrity"),
         (test_edge_cases, "Edge Cases"),
