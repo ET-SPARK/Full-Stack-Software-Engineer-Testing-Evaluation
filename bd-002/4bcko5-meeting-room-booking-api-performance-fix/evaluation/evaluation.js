@@ -19,15 +19,21 @@ async function runCommand(cmd, cwd = '.', env = {}) {
   }
 }
 
-async function waitForService(url, maxAttempts = 30) {
+async function waitForService(url, maxAttempts = 60) {
+  console.log(`Waiting for service at ${url}...`);
   for (let i = 0; i < maxAttempts; i++) {
     try {
-      await axios.get(`${url}/health`, { timeout: 2000 });
+      await axios.get(`${url}/health`, { timeout: 3000 });
+      console.log(`✓ Service at ${url} is ready`);
       return true;
     } catch (error) {
+      if (i % 5 === 0) {
+        console.log(`  Attempt ${i + 1}/${maxAttempts}...`);
+      }
       await new Promise(resolve => setTimeout(resolve, 2000));
     }
   }
+  console.log(`✗ Service at ${url} failed to start after ${maxAttempts} attempts`);
   return false;
 }
 
@@ -164,21 +170,23 @@ async function main() {
   const beforeApiUrl = process.env.API_URL_BEFORE || 'http://localhost:5000';
   const beforeDbHost = process.env.DB_HOST_BEFORE || process.env.DB_HOST || 'localhost';
   
-  if (await waitForService(beforeApiUrl)) {
+  const beforeReady = await waitForService(beforeApiUrl);
+  if (beforeReady) {
     beforeTests = await runTests(beforeApiUrl, {
       host: beforeDbHost,
       port: parseInt(process.env.DB_PORT || '5432'),
-      name: process.env.DB_NAME || 'booking_system',
+      name: 'booking_system_before',
       user: process.env.DB_USER || 'postgres',
       password: process.env.DB_PASSWORD || 'postgres'
     });
   } else {
-    console.log('WARNING: repository_before service not ready');
+    console.log('ERROR: repository_before service not ready');
     beforeTests = {
       passed: 0,
       failed: 0,
       total: 0,
       success: false,
+      output: '',
       error: 'Service not ready'
     };
   }
@@ -199,21 +207,23 @@ async function main() {
   const afterApiUrl = process.env.API_URL_AFTER || 'http://localhost:5001';
   const afterDbHost = process.env.DB_HOST_AFTER || process.env.DB_HOST || 'localhost';
   
-  if (await waitForService(afterApiUrl)) {
+  const afterReady = await waitForService(afterApiUrl);
+  if (afterReady) {
     afterTests = await runTests(afterApiUrl, {
       host: afterDbHost,
       port: parseInt(process.env.DB_PORT || '5432'),
-      name: process.env.DB_NAME || 'booking_system',
+      name: 'booking_system_after',
       user: process.env.DB_USER || 'postgres',
       password: process.env.DB_PASSWORD || 'postgres'
     });
   } else {
-    console.log('WARNING: repository_after service not ready');
+    console.log('ERROR: repository_after service not ready');
     afterTests = {
       passed: 0,
       failed: 0,
       total: 0,
       success: false,
+      output: '',
       error: 'Service not ready'
     };
   }
@@ -273,18 +283,7 @@ async function main() {
     test_execution: {
       success: result.success,
       exit_code: result.success ? 0 : 1,
-      tests: [
-        ...(beforeTests.tests || []).map((t, i) => ({
-          nodeid: `before_test_${i + 1}`,
-          name: `[BEFORE] ${t.name}`,
-          outcome: t.status
-        })),
-        ...(afterTests.tests || []).map((t, i) => ({
-          nodeid: `after_test_${i + 1}`,
-          name: `[AFTER] ${t.name}`,
-          outcome: t.status
-        }))
-      ],
+      tests: [],
       summary: {
         total: beforeTests.total + afterTests.total,
         passed: beforeTests.passed + afterTests.passed,
@@ -332,7 +331,7 @@ async function main() {
       total_tests: afterTests.total,
       passed_tests: afterTests.passed,
       failed_tests: afterTests.failed,
-      success_rate: ((afterTests.passed / afterTests.total) * 100).toFixed(1),
+      success_rate: afterTests.total > 0 ? ((afterTests.passed / afterTests.total) * 100).toFixed(1) : "0.0",
       meets_requirements: result.success
     }
   };
@@ -351,10 +350,6 @@ async function main() {
     console.error('Error saving report:', error.message);
   }
 
-  // Save results
-  const outputFile = 'evaluation/results.json';
-  await fs.writeFile(outputFile, JSON.stringify(result, null, 2));
-
   console.log('\n' + '='.repeat(60));
   console.log('EVALUATION SUMMARY');
   console.log('='.repeat(60));
@@ -364,12 +359,7 @@ async function main() {
   console.log(`Indexes added: ${result.comparison.indexes_added}`);
   console.log(`JOINs implemented: ${result.comparison.joins_implemented}`);
   console.log(`N+1 queries fixed: ${result.comparison.n_plus_one_fixed}`);
-  console.log(`\nResults saved to: ${outputFile}`);
   console.log('='.repeat(60));
-
-  // Print detailed results
-  console.log('\nDetailed Results:');
-  console.log(JSON.stringify(result, null, 2));
 
   return result.success ? 0 : 1;
 }
